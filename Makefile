@@ -16,5 +16,5 @@ clear:
 	mv $(FT_MAIN) main_test/ && rm $(NAME_FILE)
 
 commit:
-	git -am "Add $(FT_FILE)"
+	git commit -am "Add $(FT_FILE)"
 	git push
