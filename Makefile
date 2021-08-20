@@ -12,7 +12,7 @@ run: compile
 compile:
 	gcc $(GCC_FLAGS) $(FT_FILE) $(FT_MAIN) -o $(NAME_FILE)
 
-clear:
+clear: commit
 	mv $(FT_MAIN) main_test/ && rm $(NAME_FILE)
 
 commit:
