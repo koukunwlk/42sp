@@ -6,16 +6,18 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 20:33:47 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/19 20:38:09 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/08/20 12:48:49 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_strlen(char *str)
-{
-    int     i;
+#include "libft.h"
 
-    i = 0;
-    while(str[i] != 0)
-        i++;
-    return (i);
+int	ft_strlen(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != 0)
+		i++;
+	return (i);
 }

@@ -3,3 +3,5 @@ main_test/
 a.out
 core
 .vscode/
+*.o
+*.a

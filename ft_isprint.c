@@ -6,9 +6,11 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 18:39:58 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/18 18:44:17 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/08/20 12:48:39 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
