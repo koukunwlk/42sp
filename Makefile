@@ -5,7 +5,9 @@ FT_MAIN:= *main.c
 GCC_FLAGS = -Wall\
 			-Werror\
 			-Wextra
-OBJ = ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o
+OBJ = 	ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o \
+		ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o \
+		ft_memcpy.o ft_memmove.o ft_strlcpy.o
 all: $(NAME)
 
 $(NAME): obj lib
