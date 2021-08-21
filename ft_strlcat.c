@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/21 13:27:24 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/21 15:42:29 by mamaro-d         ###   ########.fr       */
+/*   Created: 2021/08/21 15:37:06 by mamaro-d          #+#    #+#             */
+/*   Updated: 2021/08/21 15:59:43 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t n)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
+	char	*s;
+	size_t	len_dest;
+	size_t	res;
+	size_t	len_src;
 	size_t	i;
 
-	if (!dest || !src)
-		return (0);
-	if (n == 0)
-		return (ft_strlen(src));
+	s = (char *)src;
+	len_dest = ft_strlen(dest);
+	len_src = ft_strlen(s);
+	res = 0;
 	i = 0;
-	while (src[i] && i < n - 1)
+	if (n > len_dest)
+		res = len_src + len_dest;
+	else
+		res = len_src + n;
+	while (s[i] && (len_dest + 1) < n)
 	{
-		dest[i] = src[i];
+		dest[len_dest] = s[i];
+		len_dest++;
 		i++;
 	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	dest[len_dest] = '\0';
+	return (res);
 }
-
