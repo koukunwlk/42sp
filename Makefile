@@ -1,12 +1,11 @@
 FT_FILE:= ft_$(shell basename *main.c | sed s/_main//)
 NAME= libft.a
-NAME_FILE:= ft_$(shell basename *main.c .c| sed s/_main//)
+NAME_FILE:= ft_$(shell basename *main.c| sed s/_main//)
 FT_MAIN:= *main.c
 GCC_FLAGS = -Wall\
 			-Werror\
 			-Wextra
-OBJ = ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o
-#gcc  *main.c > xargs "ft_$(basename *main.c | sed s/_main//)" 
+OBJ = ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o
 all: $(NAME)
 
 $(NAME): obj lib
