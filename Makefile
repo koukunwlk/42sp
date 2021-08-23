@@ -8,6 +8,7 @@ GCC_FLAGS = -Wall\
 OBJ = 	ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o \
 		ft_isprint.o ft_strlen.o ft_memset.o ft_bzero.o \
 		ft_memcpy.o ft_memmove.o ft_strlcpy.o ft_strlcat.o\
+		ft_toupper.o ft_tolower.o
 		
 all: $(NAME)
 
@@ -22,7 +23,7 @@ fclean:
 re: fclean all
 
 compile: lib
-	gcc $(GCC_FLAGS) $(FT_MAIN) -L. -lft
+	clang $(GCC_FLAGS) $(FT_MAIN) -L. -lft
 
 obj: $(OBJ)
 
