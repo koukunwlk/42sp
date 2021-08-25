@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/20 18:52:08 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/23 18:58:32 by mamaro-d         ###   ########.fr       */
+/*   Created: 2021/08/23 17:22:16 by mamaro-d          #+#    #+#             */
+/*   Updated: 2021/08/23 19:37:13 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_atoi(char *str)
 {
-	char	*d;
-	char	*s;
+	int	num;
+	int	sign;
 
-	d = dest;
-	s = src;
-	if (d > s)
-		while (n--)
-			d[n] = s[n];
-	else
-		return (ft_memcpy(dest, src, n));
-	return (dest);
+	sign = 1;
+	while ((9 <= *str && *str <= 15) || *str == ' ')
+		str++;
+	if ((*str == '-') || (*str == '+'))
+	{
+		if (*str == '-')
+			sign = -1;
+		*str++;
+	}
+	num = 0;
+	while ('9' >= *str && *str >= '0')
+	{
+		num *= 10;
+		num += sign * (*str - '0');
+		++str;
+	}
+	return (num);
 }
