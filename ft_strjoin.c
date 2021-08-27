@@ -6,13 +6,13 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:10:46 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/25 16:21:31 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/08/26 19:20:05 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, const char *s2)
 {
 	size_t	size;
 	char	*str;

@@ -11,7 +11,8 @@ OBJ = 	ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o \
 		ft_toupper.o ft_tolower.o ft_strchr.o ft_strncmp.o\
 		ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o\
 		ft_calloc.o	ft_strdup.o	ft_strrchr.o ft_substr.o\
-		ft_strjoin.o ft_strtrim.o ft_split.o
+		ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o\
+		ft_strmapi.o
 		
 all: $(NAME)
 
@@ -23,7 +24,7 @@ clean:
 fclean:
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean clean all
 
 compile: lib
 	clang $(GCC_FLAGS) $(FT_MAIN) -L. -lft
