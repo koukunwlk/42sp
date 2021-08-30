@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 22:25:13 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/27 14:24:33 by mamaro-d         ###   ########.fr       */
+/*   Created: 2021/08/27 15:47:27 by mamaro-d          #+#    #+#             */
+/*   Updated: 2021/08/27 16:28:41 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
-{
-	char			*ptr;
-	unsigned int	i;
-	int				len;
 
-	len = ft_strlen((char *)s);
-	if (!s || !f)
-		return (0);
-	ptr = (char *)malloc(sizeof(char) * (len + 1));
-	if (!ptr)
-		return (0);
-	i = 0;
-	while (s[i])
+void	ft_putnbr_fd(int n, int fd)
+{
+	char			c;
+	unsigned int	div;
+	unsigned int	num;
+
+	if (n < 0)
+		write(fd, "-", 1);
+	if (n < 0)
+		num = (-1) * n;
+	else
+		num = n;
+	div = 1;
+	while (n / 10)
 	{
-		ptr[i] = f(i, s[i]);
-		i++;
+		n = n / 10;
+		div *= 10;
 	}
-	ptr[i] = '\0';
-	return (ptr);
+	while (div)
+	{
+		c = '0' + num / div;
+		write(fd, &c, 1);
+		num = num % div;
+		div = div / 10;
+	}
 }

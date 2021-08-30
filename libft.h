@@ -6,14 +6,14 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:21:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/26 22:39:37 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/08/27 16:26:58 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
+# include <unistd.h>
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -44,5 +44,10 @@ char	*ft_strtrim(const char *s1, const char *set);
 char	**ft_split(const char *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
