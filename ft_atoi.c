@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 17:22:16 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/02 20:49:59 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/02 20:51:58 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	ft_atoi(char *str)
 		*str++;
 	}
 	if (ft_count_nums(str) > 12)
-		return (0);
+		return (-1);
 	num = 0;
 	while ('9' >= *str && *str >= '0')
 	{
