@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 18:46:09 by moacir            #+#    #+#             */
-/*   Updated: 2021/08/20 12:48:56 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/02 14:45:07 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 int	ft_isalnum(int c)
 {
-	int		value;
-
-	if ((c >= '0' && c <= '9')
-		|| (c >= 'a' && c <= 'z' )
-		|| (c >= 'A' && c <= 'Z'))
+	if (ft_isdigit(c) || ft_isalpha(c))
+	{
 		return (1);
+	}
 	return (0);
 }

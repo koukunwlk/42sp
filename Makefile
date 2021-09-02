@@ -48,3 +48,6 @@ lib: obj
 
 %.o: %.c libft.h
 	gcc -c $< -o $@
+so:
+	gcc -nostartfiles  $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
