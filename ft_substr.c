@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 15:37:33 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 15:27:28 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 15:29:15 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	
-	ptr = (char *)ft_calloc(sizeof(char), len);
+	ptr = (char *)ft_calloc(sizeof(char), len) + 1;
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
