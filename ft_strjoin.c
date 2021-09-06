@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:10:46 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 17:57:39 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 18:53:31 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(char const *s1, const char *s2)
 	size_t	size;
 	char	*str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	size = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
 	str = (char *)ft_calloc(1, size);
 	if (str == NULL)
