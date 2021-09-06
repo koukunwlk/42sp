@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 20:01:47 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 20:05:32 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static char	*int_converter(int i, int n)
 	if (n < 0)
 	{
 		holder = n * -1;
-		tmp[j++] = '-';
+		tmp[j] = '-';
 	}
 	else
 		holder = n;
