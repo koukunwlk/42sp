@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 21:37:35 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 14:26:11 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 14:41:41 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = malloc(nmemb * size);
 	if(ptr == NULL)
 		return (0);
-	ft_bzero((char *)ptr, size);
+	ft_bzero((char *)ptr, size * nmemb);
 	return (ptr);
 }
