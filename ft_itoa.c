@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 19:56:07 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 19:57:50 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	*int_converter(int i, int n)
 	unsigned int	holder;
 	int				j;
 
-	j = -1;
+	j = 0;
 	tmp = malloc(sizeof(char *) * i);
 	if(tmp == NULL)
 		return (NULL);	
