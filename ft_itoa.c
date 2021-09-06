@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 20:08:57 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 20:09:37 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static char	*int_converter(int i, int n)
 	tmp = ft_calloc(sizeof(char *), i + 1);
 	if (n < 0)
 	{
-		free(tmp)
+		free(tmp);
 		tmp = ft_calloc(sizeof(char *), i + 2);
 		holder = n * -1;
 		tmp[j++] = '-';
