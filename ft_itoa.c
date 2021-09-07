@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 21:16:46 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 21:21:51 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	fill_tmp(unsigned int holder, char *tmp, int div, int j)
 		holder %= div;
 		div /= 10;
 	}
-	tmp[j++] = '\0';
+	tmp[j + 1] = '\0';
 }
 
 static char	*int_converter(int i, int n)
@@ -57,14 +57,11 @@ static char	*int_converter(int i, int n)
 		return (NULL);	
 	if (n < 0)
 	{
-		free(tmp);
-		tmp = ft_calloc(sizeof(char *), i + 2);
 		holder = n * -1;
 		tmp[j++] = '-';
 	}
 	else
 		holder = n;
-
 	div = 1;
 	while (--i)
 		div *= 10;
@@ -77,11 +74,14 @@ static int	count_num(int n)
 	size_t			i;
 	unsigned int	tmp_num;
 
+	i = 0;
 	if (n < 0)
+	{
 		tmp_num = n * -1;
+		i++;
+	}
 	else
 		tmp_num = n;
-	i = 0;
 	while (tmp_num)
 	{
 		tmp_num /= 10;
