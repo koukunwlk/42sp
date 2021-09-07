@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 20:09:37 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 21:11:17 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_itoa(int n)
 	if (n == 0)
 	{
 		tmp = (char *)malloc(1);
+			if (tmp == NULL);
+				return (NULL)
 		*tmp = 48;
 		return (tmp);
 	}
