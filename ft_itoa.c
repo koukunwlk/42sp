@@ -6,12 +6,12 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 21:51:10 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 21:56:23 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 static int	count_num(int n);
 static char	*int_converter(int i, int n);
 
@@ -53,8 +53,9 @@ static char	*int_converter(int i, int n)
 	int				j;
 
 	j = 0;
-	if(n < 0)
+	if (n < 0)
 		i++;
+	printf("%d\n", i);
 	tmp = (char *)ft_calloc(sizeof(char), i + 1);
 	if(tmp == NULL)
 		return (NULL);	
