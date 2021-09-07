@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 21:12:03 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/06 21:14:22 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_itoa(int n)
 
 	if (n == 0)
 	{
-		tmp = (char *)malloc(1);
+		tmp = (char *)ft_calloc(1, 1);
 			if (tmp == NULL)
 				return (NULL);
 		*tmp = 48;
@@ -53,6 +53,8 @@ static char	*int_converter(int i, int n)
 
 	j = 0;
 	tmp = ft_calloc(sizeof(char *), i + 1);
+	if(tmp == NULL)
+		return (NULL);	
 	if (n < 0)
 	{
 		free(tmp);
