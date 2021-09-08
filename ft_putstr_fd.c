@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 15:20:36 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/27 15:23:39 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/08 15:02:50 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	size_t	i;
 
 	i = 0;
+	if (!s || !fd)
+		return (NULL);
 	while (s[i])
 	{
 		write(fd, &s[i], 1);
