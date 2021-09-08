@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 22:25:13 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/08 15:01:07 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:48:20 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	len = ft_strlen((char *)s);
+	len = ft_strlen(s);
 	ptr = (char *)malloc(sizeof(char) * (len + 1));
 	if (ptr == NULL)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 14:46:14 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/25 15:07:52 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:48:30 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	last = -1;
-	len = ft_strlen((char *)s);
+	len = ft_strlen(s);
 	while (i <= len)
 	{
 		if (s[i] == c)

@@ -6,12 +6,12 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 17:22:16 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/08 16:44:50 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:51:02 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-static int	ft_count_nums(char *str);
+static int	ft_count_nums(const char *str);
 
 int	ft_atoi(const char *str)
 {
@@ -39,10 +39,10 @@ int	ft_atoi(const char *str)
 	return (num);
 }
 
-static int	ft_count_nums(char *str)
+static int	ft_count_nums(const char *str)
 {
-	char	**tmp;
-	size_t	count;
+	const char	**tmp;
+	size_t		count;
 
 	tmp = &str;
 	count = 0;
