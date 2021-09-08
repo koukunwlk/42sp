@@ -6,13 +6,13 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 20:33:47 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/06 15:27:52 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/08 16:44:38 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int		i;
 
