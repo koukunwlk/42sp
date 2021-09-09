@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:26:40 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/09 19:12:54 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/09 19:14:49 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(const char *s1, char const *set)
 		end--;
 	end++;
 	len = ft_strlen(s1) - end;
-	ptr = ft_calloc(1, len + 1);
+	ptr = ft_calloc(1, len);
 	ptr = ft_substr((char *)s1, 0, end);
 	return (ptr);
 }
