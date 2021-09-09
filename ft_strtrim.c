@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:26:40 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/09 19:20:31 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/09 19:22:51 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strtrim(const char *s1, char const *set)
 	while (end && ft_strchr(set, s1[end]))
 		end--;
 	len = ft_strlen(s1) - end;
-	ptr = ft_calloc(1, len);
+	ptr = ft_calloc(1, len + 1);
 	if (ptr == NULL)
 		return(NULL);
 	ptr = ft_substr((char *)s1, 0, end + 1);
