@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:26:40 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/09 19:53:42 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/09 19:54:05 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static int
 	}
 	return (0);
 }
-
-char	*ft_strtrim(char const *s1, char const *set)
+char
+	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	size_t	i;
@@ -35,10 +35,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 
 	start = 0;
-	while (s1[start] && ft_strchr(s1[start], set))
+	while (s1[start] && ft_char_in_set(s1[start], set))
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && ft_strchr(s1[end - 1], set))
+	while (end > start && ft_char_in_set(s1[end - 1], set))
 		end--;
 	str = (char*)malloc(sizeof(*s1) * (end - start + 1));
 	if (!str)
