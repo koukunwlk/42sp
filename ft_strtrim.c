@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:26:40 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/09 19:58:15 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/09 20:51:03 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(const char *s1, char const *set)
 		end--;
 	ptr = ft_calloc(1, end - ini);
 	if (ptr == NULL)
-		return(NULL);
+		return (NULL);
 	i = 0;
 	while (ini + i < end)
 	{
