@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 11:42:10 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/23 14:28:45 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/09 14:33:07 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,13 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*pointer;
+	size_t	i;
 
-	pointer = (char *)s;
-	while (*pointer)
+	i = 0;
+	while (i++ <= ft_strlen(s))
 	{
-		if (*pointer == c)
-		{
-			return (pointer);
-		}
-		pointer++;
+		if (s[i] == c)
+			return (s[i]);
 	}
-	if (*pointer == '\0' && c == '\0')
-	{
-		return (pointer);
-	}
-	return (0);
+	return (NULL);
 }
