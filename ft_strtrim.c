@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:26:40 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 16:20:20 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:30:46 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ char	*ft_strtrim(const char *s1, char const *set)
 		ptr[i] = s1[ini + i];
 		i++;
 	}
-	ptr[i] = 0;
 	return (ptr);
 }
 
