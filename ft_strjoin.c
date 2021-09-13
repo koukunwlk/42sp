@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:10:46 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 13:43:46 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:45:42 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ char	*ft_strjoin(char const *s1, const char *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	str = (char *)malloc(sizeof(char) * size);
+	str = (char *)ft_calloc(sizeof(char), size);
 	if (str == NULL)
 		return (NULL);
 	ft_strlcat(str, s1, size);
 	ft_strlcat(str, s2, size);
-	str[size + 1] = '\0';
 	return (str);
 }
