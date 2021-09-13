@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 19:21:43 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 13:02:24 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:49:50 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static void	fill_tmp(unsigned int holder, char *tmp, int div, int j)
 		div /= 10;
 		j++;
 	}
+	tmp[j] = '\0';
 }
 
 static char	*int_converter(int i, int n)
