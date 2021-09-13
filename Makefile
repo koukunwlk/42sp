@@ -51,3 +51,4 @@ lib: obj
 so:
 	gcc -nostartfiles  $(SRCS) $(BONUS)
 	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
+.PHONY: all clean fclean re $(NAME)
