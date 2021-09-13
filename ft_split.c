@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 18:04:33 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/08/26 19:17:07 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 12:58:38 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static size_t	ft_word_counter(char const *s, char c)
 {
-	 size_t	i;
-	 size_t	j;
-	 char	last;
+	size_t	i;
+	size_t	j;
+	char	last;
 
 	last = c;
 	i = 0;
 	j = 0;
-	while (s[i] != 0)
+	while (s[i])
 	{
 		if (last == c && s[i] != c)
 			j++;
@@ -50,7 +50,7 @@ static void	ft_alloc_matrix(char const *s, char c, size_t size, char **arr)
 		tmp += len;
 		count++;
 	}
-	arr[count] = 0;
+	arr[count] = '\0';
 }
 
 char	**ft_split(char const *s, char c)
@@ -58,13 +58,12 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	size_t	i;
 
-	arr = 0;
 	if (!s)
-		return (0);
+		return (NULL);
 	i = ft_word_counter(s, c);
 	arr = (char **)malloc(sizeof(char *) * (i + 1));
 	if (!arr)
-		return (0);
+		return (NULL);
 	ft_alloc_matrix(s, c, i, arr);
 	return (arr);
 }
