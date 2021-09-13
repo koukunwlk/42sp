@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 15:32:35 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 16:28:08 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 16:29:31 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*pointer;
+	unsigned char	*pointer;
 
-	pointer = (char *)s;
+	pointer = (unsigned char *)s;
 	while (n--)
 	{
-		if (*pointer == c)
+		if (*pointer == (unsigned char)c)
 			return ((void *)pointer);
 		pointer++;
 	}
