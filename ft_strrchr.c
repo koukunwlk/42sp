@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 14:46:14 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/10 15:48:33 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:37:35 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (last == -1)
 		return (NULL);
-	return (s + last);
+	return ((char *)(s + last));
 }
