@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:26:40 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 17:34:39 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 17:38:15 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strtrim(const char *s1, char const *set)
 	char		*ptr;
 
 	ini = 0;
+	if (!s1 || !set)
+		return (NULL);
 	while (s1[ini] && ft_find_char(set, s1[ini]))
 		ini++;
 	end = ft_strlen(s1);
