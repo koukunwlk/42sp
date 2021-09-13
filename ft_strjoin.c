@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 16:10:46 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 13:00:25 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/13 13:43:46 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ char	*ft_strjoin(char const *s1, const char *s2)
 		return (NULL);
 	ft_strlcat(str, s1, size);
 	ft_strlcat(str, s2, size);
+	str[size + 1] = '\0';
 	return (str);
 }
