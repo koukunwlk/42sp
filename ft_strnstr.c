@@ -6,7 +6,7 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 16:42:38 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/09 20:50:10 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/14 13:44:06 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int		needle_len;
+	size_t		needle_len;
 
 	if (needle[0] == '\0')
 		return ((char *)haystack);

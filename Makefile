@@ -1,7 +1,4 @@
-FT_FILE:= ft_$(shell basename *main.c | sed s/_main//)
-NAME= libft.a
-NAME_FILE:= ft_$(shell basename *main.c| sed s/_main//)
-FT_MAIN:= *main.c
+NAME = libft.a
 GCC_FLAGS = -Wall\
 			-Werror\
 			-Wextra
@@ -16,39 +13,32 @@ SRCS = 	ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 		ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c\
 		ft_putendl_fd.c ft_putnbr_fd.c
 
-OBJ = $(SRCS:.c=.o)
-
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 		ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-BONUS_OBJ = $(BONUS:.c=.o)
-all: $(NAME)
+OBJS = $(SRCS:.c=.o)
 
-$(NAME): obj lib
+BONUS_OBJS	= ${BONUS:.c=.o}
+
+CC = clang
+
+${NAME}: ${OBJS}
+	ar -rcs ${NAME} ${OBJS}
+
+all: ${NAME}
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f ${OBJS} ${BONUS_OBJS}
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	rm -f ${NAME}
 
-re: fclean clean all
+re: fclean all
 
-compile: lib
-	clang $(GCC_FLAGS) $(FT_MAIN) -L. -lft
+bonus: 	${BONUS_OBJS}
+	ar -rcs $(NAME) ${BONUS_OBJS}
 
-obj: $(OBJ)
+%.o: %.c
+	${CC} ${GCC_FLAGS} -c $< -o $@
 
-
-bonus: $(OBJ) $(BONUS_OBJ)
-	ar rc $(NAME) $(OBJ) $(BONUS_OBJ)
-
-lib: obj
-	ar rc $(NAME) $(OBJ)
-
-%.o: %.c libft.h
-	gcc -c $< -o $@
-so:
-	gcc -nostartfiles  $(SRCS) $(BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
-.PHONY: all clean fclean re $(NAME)
+.PHONY: all, clean, fclean, re, bonus

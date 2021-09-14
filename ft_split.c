@@ -6,11 +6,30 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 18:04:33 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 15:41:55 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/14 14:44:20 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	ft_word_counter(char const *s, char c);
+static void	ft_alloc_matrix(char const *s, char c, size_t size, char **arr);
+static void free_all(char **arr);
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	i = ft_word_counter(s, c);
+	arr = (char **)malloc(sizeof(char *) * (i + 1));
+	if (!arr)
+		return (NULL);
+	ft_alloc_matrix(s, c, i, arr);
+	return (arr);
+}
 
 static size_t	ft_word_counter(char const *s, char c)
 {
@@ -47,23 +66,23 @@ static void	ft_alloc_matrix(char const *s, char c, size_t size, char **arr)
 		while (tmp[len] != c && tmp[len] != 0)
 			len++;
 		arr[count] = ft_substr(tmp, 0, len);
+		if(!arr[count])
+		{
+			free_all(arr);
+			return ;
+		}
 		tmp += len;
 		count++;
 	}
 	arr[count] = 0;
 }
 
-char	**ft_split(char const *s, char c)
+static void free_all(char **arr)
 {
-	char	**arr;
-	size_t	i;
+	int	i;
 
-	if (!s)
-		return (NULL);
-	i = ft_word_counter(s, c);
-	arr = (char **)malloc(sizeof(char *) * (i + 1));
-	if (!arr)
-		return (NULL);
-	ft_alloc_matrix(s, c, i, arr);
-	return (arr);
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
 }
