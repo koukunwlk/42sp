@@ -6,15 +6,15 @@
 /*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/25 18:04:33 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/14 14:44:20 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/09/15 16:54:54 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static size_t	ft_word_counter(char const *s, char c);
-static void	ft_alloc_matrix(char const *s, char c, size_t size, char **arr);
-static void free_all(char **arr);
+static void		ft_alloc_matrix(char const *s, char c, size_t size, char **arr);
+static void		free_all(char **arr);
 
 char	**ft_split(char const *s, char c)
 {
@@ -66,7 +66,7 @@ static void	ft_alloc_matrix(char const *s, char c, size_t size, char **arr)
 		while (tmp[len] != c && tmp[len] != 0)
 			len++;
 		arr[count] = ft_substr(tmp, 0, len);
-		if(!arr[count])
+		if (!arr[count])
 		{
 			free_all(arr);
 			return ;
@@ -77,7 +77,7 @@ static void	ft_alloc_matrix(char const *s, char c, size_t size, char **arr)
 	arr[count] = 0;
 }
 
-static void free_all(char **arr)
+static void	free_all(char **arr)
 {
 	int	i;
 
