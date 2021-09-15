@@ -22,23 +22,23 @@ BONUS_OBJS	= ${BONUS:.c=.o}
 
 CC = clang
 
-${NAME}: ${OBJS}
-	ar -rcs ${NAME} ${OBJS}
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
-all: ${NAME}
+all: $(NAME)
 
 clean:
-	rm -f ${OBJS} ${BONUS_OBJS}
+	rm -f $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
 re: fclean all
 
-bonus: 	${BONUS_OBJS}
-	ar -rcs $(NAME) ${BONUS_OBJS}
+bonus: 	$(BONUS_OBJS)
+	ar -rcs $(NAME) $(BONUS_OBJS)
 
 %.o: %.c
-	${CC} ${GCC_FLAGS} -c $< -o $@
+	$(CC) $(GCC_FLAGS) -c $< -o $@
 
 .PHONY: all, clean, fclean, re, bonus
