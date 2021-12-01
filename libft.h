@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mamaro-d <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:21:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 13:22:39 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:35:43 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFFER_SIZE  1
+# define MAX_OPEN 256
 
 # include <unistd.h>
 # include <stdlib.h>
+
 typedef struct s_list
 {
 	void			*content;
@@ -55,6 +58,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*get_next_line(int fd);
+
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);

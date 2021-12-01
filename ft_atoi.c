@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: mamaro-d <coder@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 17:22:16 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/09/13 17:29:18 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/11/15 16:48:42 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static int	ft_count_nums(const char *str);
 
 int	ft_atoi(const char *str)
