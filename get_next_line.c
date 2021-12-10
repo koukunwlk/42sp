@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaro-d <coder@student.42.fr>             +#+  +:+       +#+        */
+/*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 14:09:52 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/11/15 16:48:23 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:12:05 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE < 1 || read(fd, buffer, 0) < 0)
 		return (NULL);
+	size_read = 0;
 	size_read = read(fd, buffer, BUFFER_SIZE);
 	if (size_read < 0)
 		return (NULL);

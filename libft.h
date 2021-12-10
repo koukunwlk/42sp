@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamaro-d <coder@student.42.fr>             +#+  +:+       +#+        */
+/*   By: mamaro-d <mamaro-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 16:21:49 by mamaro-d          #+#    #+#             */
-/*   Updated: 2021/11/15 16:35:43 by mamaro-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 18:40:51 by mamaro-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,20 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct s_list
-{
+/* Doubly Linked List */
+typedef struct s_dlist {
+	int		number;
+	struct s_dlist	*prev;
+	struct s_dlist	*next;
+}	t_dlist;
+
+/*Linked List */
+typedef struct s_list {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
 
+/* Libft functions */
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -60,6 +68,7 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*get_next_line(int fd);
 
+/* Functions to manipulate linked list */
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
@@ -69,5 +78,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* Functions to manipulate doubly linked list */
+void	push(t_dlist **head_node, int number);
+void	insert_after(t_dlist *prev_node, int number);
+void	append_node(t_dlist **head_node, int number);
+void	ft_lstd_clear(t_dlist **lst, void (*del)(void *));
+void	ft_lstd_del_one(t_dlist *lst, void (*del)(void *));
 
 #endif
